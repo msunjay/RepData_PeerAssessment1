@@ -40,7 +40,7 @@ colnames(SumSteps) <- c("Date", "Steps") #Renaming columns in new subset date to
 ```{r, echo=TRUE}
 hist(SumSteps$Steps, xlab = "Steps", main = "Total Steps / Day")
 ```
-
+![](/images/TotalSteps.png)
 ####To identify the mean of steps taken per day, just run the calculation for mean in R
 
 ```{r}
