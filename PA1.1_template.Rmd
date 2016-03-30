@@ -1,6 +1,6 @@
 ---
-title: "PA1_template.Rmd"
-author: "SunjayM"
+title: "Reproducible Research: Peer Assessment 1.SM"
+author: "Sunjay M."
 date: "March 29, 2016"
 output: html_document
 ---
