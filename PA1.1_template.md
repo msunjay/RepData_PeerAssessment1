@@ -45,12 +45,16 @@ hist(SumSteps$Steps, xlab = "Steps", main = "Total Steps / Day")
 
 ```{r}
 mean(SumSteps$Steps)
+[1] 10766.19
 as.integer(mean(SumSteps$Steps)) #this is to provide a whole number of steps taken per day.
+[1] 10766
 ```
 ####To identify the median of steps taken per day, just run the calculation for median in R
 ```{r}
 median(SumSteps$Steps)
+[1] 10765
 as.integer(median(SumSteps$Steps))
+[1] 10765
 ```
 # What is the average daily activity pattern?
 ##### Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
@@ -58,19 +62,20 @@ as.integer(median(SumSteps$Steps))
 StepsInter <- aggregate(steps ~ interval, activity, mean)
 plot(StepsInter, type= "l", col="orange", main= "Average Daily Activity Pattern")
 ```
-
+![](/images/AvgDailyActivityPattern.png)
 ##### Calculate 5-minute interval containing the maximum number of steps
 
 ```{r}
 StepsInter$interval[which.max(StepsInter$steps)]
 ```
-
+[1] 835
 #Imputing missing values
 
 #####Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 
 ```{r}
 sum(is.na(activity$steps))
+[1] 2304
 ```
 ##### Devise a strategy for filling in all of the missing values in the dataset.
 
@@ -102,10 +107,15 @@ colnames(SumSteps2)<- c("Date", "Steps")
 #####  Mean number of Steps with NA data taken care of and returning a whole number
 ```{r}
 as.integer(mean(SumSteps2$Steps))
+
+[1] 10821
+
 ```
 #####  Median of Steps with NA data taken care of and returning a whole number
 ```{r}
 as.integer(median(SumSteps2$Steps))
+[1] 11015
+
 ```
 ####  Creating the histogram of total steps per day, categorized by data set to show impact of including the missing values
 ```{r, echo=TRUE}
@@ -113,7 +123,7 @@ hist(SumSteps2$Steps, breaks=5, xlab="Steps", main = "Total Steps / Day with NAs
 hist(SumSteps$Steps, breaks=5, xlab="Steps", main = "Total Steps / Day with NAs Fixed", col="Grey", add=T)
 legend("topright", c("Imputed Data", "Non-NA Data"), fill=c("blue", "grey"))
 ```
-
+![](/images/TotalStepsperDayNAs.png)
 #Are there differences in activity patterns between weekdays and weekends?
 
 ##### Create a new column to create a Weekday or Weekend depending on day of week
@@ -134,3 +144,4 @@ xyplot(Avg~interval | TypofDay, data= StepsInter2, type = "l", layout = c(1,2), 
        ylab= "Avg. Number of Steps", 
        xlab= "Intervals")
 ```
+![](/images/AvgDailyActivityPattern.png)
