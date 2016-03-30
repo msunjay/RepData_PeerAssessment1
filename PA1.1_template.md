@@ -1,8 +1,8 @@
 ---
-title: "Reproducible Research: Peer Assessment 1.SM"
-author: "Sunjay M."
+title: 'Reproducible Research: PA1'
+author: "SunjayM"
 date: "March 29, 2016"
-output: html_document
+output: word_document
 ---
 
 #Loading and preprocessing the data
